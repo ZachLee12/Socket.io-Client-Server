@@ -1,0 +1,75 @@
+.masterContainer{
+    border: 5px solid hsl(201, 67%, 37%);
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 0px rgb(45, 152, 181);
+}
+
+.chatBox{
+    border: 2px solid #3fac6d;
+    height: 350px;
+    overflow: scroll;
+}
+
+html{
+    background-color: #bde3f8;
+}
+
+.usernameBox, .session_id_box{
+    display: flex;
+    gap: 10px;
+}
+
+.session_id_box{
+    margin-top: 3px;
+}
+
+input{
+    flex: 1 1 100%;
+}
+
+input{
+    height: 20px;
+    margin-left: 2px;
+}
+
+/* odd-numbered chat boxes */
+.chatBox .chat:nth-child(even){
+    background-color: #bebec0;
+}
+
+/* even-numbered chat boxes */
+.chatBox .chat:nth-child(odd){
+    background-color: #f0f0f1;
+}
+
+.errorBox{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.error{
+    color:rgb(216, 26, 26);
+}
+
+.inputBox{
+    display: flex;
+}
+
+.inputBoxLeft{
+    flex: 1 1 0;
+}
+
+.inputBoxRight>button{
+    height:55px; 
+    width: 100px;
+    background-color: #46abf9;
+    border: 2px solid #255c86;
+}
