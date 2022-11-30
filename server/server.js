@@ -15,7 +15,7 @@ let client = new Client({
 
 });
 
-//SELECT
+//connect to database
 const awaitConnection = new Promise((resolve, reject) => {
     client.connect((err) => {
         if (err) {
@@ -39,6 +39,7 @@ const awaitConnection = new Promise((resolve, reject) => {
             }
         })
     })
+    .catch((err) => console.log(err))
 
 
 const httpServer = createServer((req, res) => {
@@ -64,9 +65,14 @@ io.on("connection", (socket) => {
     //INSERT SQL (from client)
     socket.on("sendData", (username, session_id) => {
         console.log("received, making query...")
-        client.query(`INSERT INTO users(user_id, session_id) VALUES ('${username}','${session_id}')`)
-        console.log("query finished")
-        socket.emit("database", username, session_id);
+        client.query(`INSERT INTO users(user_id, session_id) VALUES ('${username}','${session_id}')`, (err, res) => {
+            if (err) {
+                console.log("QUERY ERROR: " + err);
+            } else {
+                console.log(res.command)
+                socket.emit("database", username, session_id);
+            }
+        })
     })
 });
 

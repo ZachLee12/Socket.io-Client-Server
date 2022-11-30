@@ -12,7 +12,7 @@
 .chatBox{
     border: 2px solid #3fac6d;
     height: 350px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 html{
