@@ -1,5 +1,5 @@
 # socket.io-client-server
-A WebSocket project using Socket.io that allows clients to send information to the server which will then store it in a PostgreSQL database. 
+A WebSocket project using Socket.io that allows clients to send information to the server which will then store it in a PostgreSQL database. Full documentation available at https://socket.io/ 
 
 To demo this WebSocket Connection:
 1. Clone the repo or download and extract the .zip folder.
